@@ -41,7 +41,7 @@ async function populateEvents(type) {
 
                 <div class="container-event-details">
                     <h3>${event.eventName}</h3>
-                    <p class="p-smaller">${formattedTime}, ${formattedDate}</p>
+                    <p class="p-smaller">${formattedTime}</p>
                     <p class="p-smaller">${event.location}</p>
                 </div>
             `;
