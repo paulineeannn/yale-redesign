@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Now Dig This by Greg Tate",
+        "date": "Published 2021",
+        "description": "This marks the continuation of Yale School of Art Commencement—a series that publishes the speeches by speakers invited by the Dean on the occasion of the commencement of students receiving their MFA degrees from graphic design, painting/printmaking, photography, and sculpture.<br><br>Our guest speaker in May 2021 was Greg Tate.<br>The class of 2021 representative student speaker was Amina Ross, Sculpture ‘21, featuring a preamble by Stavros Niarchos Foundation Dean and Professor of Art Marta Kuzma.<br><br><b>Edited by</b> Willis Kingery, Graphic Design '19.<br><b>Designed by:</b> Bianca Ibarlucea, Graphic Design '21.",
+        "pages": "74 pages, ISBN: 978-1-948891-09-7",
+        "imageUrl": "../assets/commencement-1.jpg"
+    },
+    {
+        "title": "Art Dwells in the Present by Gregg Bordowitz",
+        "date": "Published 2020",
+        "description": "Featuring a preamble by Stavros Niarchos Foundation Dean and Professor of Art Marta Kuzma, Art Dwells in The Present marks the continuation of Yale School of Art Commencement—a series that publishes the speeches by speakers invited by the Dean on the occasion of the commencement of students receiving their MFA degrees from graphic design, painting/printmaking, photography, and sculpture. <br><br>Our guest speaker in May 2020 was Gregg Bordowitz. <br><br><b>Fragmental editing by:</b> Angie Keefer, BA ‘99, and Willis Kingery, Graphic Design '19.<br><b>Designed by:</b> Jinu Hong, Graphic Design '20, and Tuan Quoc Pham, Graphic Design '20.",
+        "pages": "30 pages, ISBN: 978-1-948891-06-6",
+        "imageUrl": "../assets/commencement-2.jpg"
+    },
+    {
+        "title": "Sermon of the Nonresponse by Fred Moten",
+        "date": "Published 2018",
+        "description": "Featuring a preamble by Stavros Niarchos Foundation Dean and Professor of Art Marta Kuzma, Sermon of the Nonresponse marked the inauguration of Yale School of Art Commencement—a series that publishes the speeches by speakers invited by the Dean on the occasion of the commencement of students receiving their MFA degrees from graphic design, painting/printmaking, photography, and sculpture. <br><br>Our guest speaker in May 2018 was Fred Moten.  <br><br><b>Edited by:</b> Ayham Ghraowi, Graphic Design ‘17.<br><b>Designed by:</b> Bryce Wilner, Graphic Design '18.",
+        "pages": "30 pages, ISBN: 978-1-948891-04-2",
+        "imageUrl": "../assets/commencement-3.png"
+    }
+]
