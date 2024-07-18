@@ -1,4 +1,4 @@
-# Yale School of Art Redesgin
+# Yale School of Art Redesign
 This project serves as a technical assessment for an internship application, it involves redesigning the Yale School of Art's website to enhance its visual appeal, functionality, and user experience. The objective is to evaluate practical knowledge in web development, including HTML, CSS, JavaScript, and PHP. 
 
 ## Folder Structure
