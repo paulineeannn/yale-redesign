@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us | Yale School of Art</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="container-navigation">
+            <div class="container-nav-logo">
+                <img src="../assets/logo.png" alt="Yale School of Art Logo" class="img-header">
+                <div class="container-nav-logo-text">
+                    <h1 class="text-bold">Yale</h1>
+                    <h2 class="text-thin">School of Art</h2>
+                </div>
+            </div>
+            <div class="cont-links-nav">
+                <ul class="links-navig">
+                    <li><a class="linkText" href="../index.html">Home</a></li>
+                    <li><a class="linkText" href="../pages/about.html">About</a></li>
+                    <li><a class="linkText" href="../pages/apply.html">Apply</a></li>
+                    <li><a class="linkText" href="../pages/publications.html">Publications</a></li>
+                    <li><a class="linkText" href="../pages/news.html">News</a></li>
+                    <li><a class="linkText" href="../pages/events.html">Events</a></li>
+                    <li><a class="linkText selected" href="../pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        <div class="container-landing-half">
+            <div class="effect-gradient">
+                <h1 class="text-landing-nonhome">Contact Us</h1>
+            </div>
+        </div>
+
+        <div>
+            <div class="container-contactno">
+                <div class="card-contactno">
+                    <h2>Office of the Dean</h2>
+                    <p>203-432-2606</p>
+                </div>
+
+                <div class="card-contactno">
+                    <h2>Registrar and Admission</h2>
+                    <p>203-432-2600</p>
+                </div>
+
+
+                <div class="card-contactno">
+                    <h2>Digital Technology Office</h2>
+                    <p>203-432-9120</p>
+                </div>
+            </div>
+
+            <div class="flex-row" id="container-emails">
+                <div id="container-img-contact"">
+                    <div class="effect-gradient-half">
+                        <h1 class="text-gradient-half">Emails</h1>
+                    </div>
+                </div>
+                <div id="container-emails-text">
+                    <table class="table-emails">
+                        <tbody>
+                        <tr>
+                            <td class="text-department">Graduate MFA Admission</td>
+                            <td><a class="text-emails"  href="mailto:art.admissions@yale.edu">art.admissions@yale.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-department">Newly Admitted &amp; Waitlisted Students</td>
+                            <td><a class="text-emails"  href="mailto:taryn.wolf@yale.edu">taryn.wolf@yale.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-department">Financial Aid</td>
+                            <td><a class="text-emails"  href="mailto:nicole.archer@yale.edu">nicole.archer@yale.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-department">Alumni Transcripts/Education Verifications</td>
+                            <td><a class="text-emails"  href="mailto:emily.cappa@yale.edu">emily.cappa@yale.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-department"><a class="text-emails"  href="https://yale.app.box.com/s/cd8syi3kbme1we6aoird0tlxqm9j4myp">Transcript Request Form</a></td>
+                            <td><a class="text-emails"  href="mailto:emily.cappa@yale.edu">emily.cappa@yale.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-department">Yale Norfolk Summer School of Art</td>
+                            <td><a class="text-emails"  href="mailto:norfolkart@yale.edu">norfolkart@yale.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-department">Yale Commencement</td>
+                            <td><a class="text-emails"  href="mailto:university.events@yale.edu">university.events@yale.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-department">Public Affairs/Media Inquiries</td>
+                            <td><a class="text-emails"  href="mailto:sarah.stevens-morling@yale.edu">sarah.stevens-morling@yale.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-department">Donations and Gifts</td>
+                            <td><a class="text-emails"  href="mailto:nicole.freeman@yale.edu">nicole.freeman@yale.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-department">Digital Technology Office</td>
+                            <td><a class="text-emails"  href="mailto:art.help@yale.edu">art.help@yale.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-department">All Other Inquiries</td>
+                            <td><a class="text-emails"  href="mailto:artschool.info@yale.edu">artschool.info@yale.edu</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+                
+        </div>
+
+        <h2 class="heading text-center" id="heading-inquiry">Get in touch with us</h2>
+        <div id="container-form">
+            <form action="../php/send-inquiry.php" method="POST">
+                <input type="text" id="input-name" name="name" required placeholder="Name">
+                <input type="email" id="input-email" name="email" required placeholder="Email">
+                <input type="text" id="input-contact" name="contact" required placeholder="Contact">
+                <textarea id="input-message" name="message" required  placeholder="Type your message here..."></textarea>
+    
+                <button type="submit" class="button-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column" id="footer-col1">
+                <h3>Yale College of Arts</h3>
+                <p>1156 Chapel Street, POB 208339<br>New Haven, Connecticut, 06520-8339</p>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/about.html">About</a></li>
+                    <li><a href="../pages/apply.html">Apply</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><a href="../pages/publications.html">Publication</a></li>
+                    <li><a href="../pages/news.html">News</a></li>
+                    <li><a href="../pages/events.html">Event</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><a href="../pages/contact.html">Contacts</a></li>
+                    <li><a href="https://www.facebook.com/YaleSchoolofArt/" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/yaleschoolofart/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCDwJT0mYodTSodcpH-hGmdA" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
