@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Body of Work: Yale School of Art MFA 2020",
+        "date": "Published 2021",
+        "description": "It features the work of the graduating MFA class of 2020 at the Yale School of Art. It is the fourth book of the school's all-school MFA book series. The book includes an afterword by Marta Kuzma, the Stavros Niarchos Foundation Dean and Professor of Art, and contributions from Steven Rodriguez and Nicholas Weltyk (both from Graphic Design '20), Carly Sheehan (Painting/Printmaking '20), Angela Chen (Photography '20), and David Roy (Sculpture '20). Willis Kingery (Graphic Design '19) edited the book, Bryant Wells (Graphic Design '20) designed it, and Timothy Brawner (Painting/Printmaking '20) provided the cover illustrations.",
+        "pages": "304 pages, ISBN: 978-1-948891-07-3",
+        "imageUrl": "../assets/print-1.jpg",
+        "url": "https://search.library.yale.edu/catalog/16590637"
+    },
+    {
+        "title": "Body of Work: Yale School of Art MFA 2019",
+        "date": "Published 2020",
+        "description": "It features the art of the graduating MFA class of 2019 from the Yale School of Art. It is the third book in the all-school MFA series and includes a foreword by Marta Kuzma, the Dean and Professor of Art at the Stavros Niarchos Foundation. The book includes contributions from students Emma Gregoline, Emile Mausner, Genesis Báez, and Alfredo Diaz. It was edited by Willis Kingery, Edi Dai, and David Knowles, and designed by David Knowles and Willis Kingery.",
+        "pages": "256 pages, ISBN: 978-1-948891-02-8",
+        "imageUrl": "../assets/print-2.jpg",
+        "url": ""
+    },
+    {
+        "title": "Yale School of Art MFA 2018",
+        "date": "Published 2019",
+        "description": "It showcases the work of the MFA class of 2018 at Yale School of Art. It features a foreword by Marta Kuzma, with contributions from Bryce Wilner, Ernest A. Bryant III, and Ian Page. The book is part of a series and is edited by Ayham Ghraowi, designed by Hrefna Sigurðardóttir, with a cover image by Dan Swindel.",
+        "pages": "256 pages, ISBN: 978-1-948891-00-4",
+        "imageUrl": "../assets/print-3.jpg",
+        "url": "https://search.library.yale.edu/catalog/16590611"
+    },
+    {
+        "title": "Yale School of Art MFA 2017",
+        "date": "Published 2018",
+        "description": "It features opening remarks by Marta Kuzma, the Stavros Niarchos Foundation Dean and Professor of Art, and written contributions from Gerald Sheffield (Painting/Printmaking '17), Lucy Lindsey (Sculpture '17), and Chase Booker (Graphic Design '17). It showcases the collected work of the graduating MFA class of 2017 and marks the initiation of the annual publishing program in the first year of Marta Kuzma’s appointment as Dean. The design and editing were done by Ben Ganz and Ayham Ghraowi, both Graphic Design '17, with the publication wrapper created by Wes Larios, Painting/Printmaking '17.",
+        "pages": "248 pages",
+        "imageUrl": "../assets/print-4.jpg",
+        "url": "https://search.library.yale.edu/catalog/16590694"
+    }
+]
