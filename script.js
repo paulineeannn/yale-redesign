@@ -1,39 +1,249 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-    const timelineData = [
-        { year: "1832", event: "The Trumbull Gallery, founded by Colonel John Trumbull and Professor Benjamin Silliman, opens, marking the beginning of visual arts study at Yale." },
-        { year: "1858", event: "An art exhibition directed by College Librarian Daniel Coit Gilman leads to the establishment of an art school." },
-        { year: "1864", event: "Augustus Russell Street's generosity enables the founding of Yale's art school, overseen by an art council including Samuel F. B. Morse." },
-        { year: "1869", event: "Yale School of the Fine Arts opens, directed by John Ferguson Weir, with classes in drawing, painting, sculpture, and art history." },
-        { year: "1871", event: "The Jarves Collection of early Italian paintings is acquired, augmenting the collections in Street Hall." },
-        { year: "1908", event: "Architectural instruction begins." },
-        { year: "1916", event: "Architecture is established as a department, led by Everett Victor Meeks." },
-        { year: "1925", event: "Drama is added as a department under George Pierce Baker, with a separate building." },
-        { year: "1928", event: "A new art gallery, designed by Egerton Swartwout and funded by Edward S. Harkness, opens, connected to Street Hall by a bridge." },
-        { year: "1953", event: "A large addition to the Art Gallery, designed by Louis I. Kahn and funded by the Campbell family and other friends of the arts, opens." },
-        { year: "1955", event: "The Drama department becomes an independent school." },
-        { year: "1959", event: "The School of Art and Architecture becomes a fully graduate professional school." },
-        { year: "1963", event: "The Art and Architecture Building, designed by Paul Rudolph, opens." },
-        { year: "1969", event: "The School of Art and Architecture is divided into two faculties, each with its own dean." },
-        { year: "1972", event: "The School of Art and the School of Architecture become separate schools, sharing the Rudolph Building until 2000." },
-        { year: "2009", event: "A new arts complex, designed by Deborah Berke, opens at 1156 Chapel Street and 353 Crown Street, housing all departments of the School of Art except sculpture." },
-        { year: "2009", event: "Sculpture moves to a new building at 36 Edgewood Avenue, adjacent to a new gallery at 32 Edgewood Avenue, both designed by Kieran Timberlake." }
-    ];
+    fetch('../json/timeline.json')
+        .then(response => response.json())
+        .then(data => {
+            const timelineBody = document.getElementById("timeline-body");
 
-    const timelineBody = document.getElementById("timeline-body");
+            data.forEach(item => {
+                const row = document.createElement("tr");
 
-    timelineData.forEach(item => {
-        const row = document.createElement("tr");
+                const yearCell = document.createElement("td");
+                yearCell.className = "cell-year";
+                yearCell.innerHTML = `<b class="text-year">${item.year}</b>`;
+                row.appendChild(yearCell);
 
-        const yearCell = document.createElement("td");
-        yearCell.className = "cell-year";
-        yearCell.innerHTML = `<b class="text-year">${item.year}</b>`;
-        row.appendChild(yearCell);
+                const eventCell = document.createElement("td");
+                eventCell.className = "cell-event";
+                eventCell.textContent = item.event;
+                row.appendChild(eventCell);
 
-        const eventCell = document.createElement("td");
-        eventCell.className = "cell-event";
-        eventCell.textContent = item.event;
-        row.appendChild(eventCell);
-
-        timelineBody.appendChild(row);
-    });
+                timelineBody.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching timeline data:', error);
+        });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const bookDetailsContainer = document.getElementById("book-details-container");
+    const bookDotsContainer = document.getElementById("book-dots-container");
+    const commencementDetailsContainer = document.getElementById("commencement-details-container");
+    const commencementDotsContainer = document.getElementById("commencement-dots-container");
+    let currentBookIndex = 0;
+    let currentCommencementIndex = 0;
+    let booksData = [];
+    let commencementsData = [];
+
+    // Fetch books data
+    fetch('../json/books.json')
+        .then(response => response.json())
+        .then(data => {
+            booksData = data;
+            displayItem(bookDetailsContainer, booksData, currentBookIndex, "book");
+
+            for (let i = 0; i < booksData.length; i++) {
+                const dot = document.createElement("span");
+                dot.classList.add("dot");
+                if (i === currentBookIndex) {
+                    dot.classList.add("active");
+                }
+                dot.addEventListener("click", () => {
+                    currentBookIndex = i;
+                    updateDots(bookDotsContainer, currentBookIndex);
+                    displayItem(bookDetailsContainer, booksData, currentBookIndex, "book");
+                });
+                bookDotsContainer.appendChild(dot);
+            }
+        })
+        .catch(error => console.error('Error fetching book data:', error));
+
+    // Fetch commencements data
+    fetch('../json/commencements.json')
+        .then(response => response.json())
+        .then(data => {
+            commencementsData = data;
+            displayItem(commencementDetailsContainer, commencementsData, currentCommencementIndex, "commencement");
+
+            for (let i = 0; i < commencementsData.length; i++) {
+                const dot = document.createElement("span");
+                dot.classList.add("dot");
+                if (i === currentCommencementIndex) {
+                    dot.classList.add("active");
+                }
+                dot.addEventListener("click", () => {
+                    currentCommencementIndex = i;
+                    updateDots(commencementDotsContainer, currentCommencementIndex);
+                    displayItem(commencementDetailsContainer, commencementsData, currentCommencementIndex, "commencement");
+                });
+                commencementDotsContainer.appendChild(dot);
+            }
+        })
+        .catch(error => console.error('Error fetching commencement data:', error));
+
+    function displayItem(container, data, index, type) {
+        const item = data[index];
+        let readMoreHtml = "";
+        if (type === "book") {
+            readMoreHtml = `
+                <div class="container-readmore">
+                    <a href='${item.url}' target='_blank' class="button-blue">Open in Library System</a>
+                </div>
+            `;
+        }
+        container.innerHTML = `
+            <div class="container-item active">
+                <div class="container-item-img">
+                    <img src="${item.imageUrl}" alt="${item.title}">
+                </div>
+                <div class="container-item-details">
+                    <div class="container-item-texts">
+                        <h3 class="text-item-title">${item.title}</h3>
+                        <h4 class="text-item-date">${item.date}</h4>
+                        <p class="text-item-description">${item.description}</p>
+                        <p class="p-smaller">${item.pages}</p>
+                    </div>
+                    ${readMoreHtml}
+                </div>
+            </div>
+        `;
+    }
+
+    function updateDots(container, index) {
+        const dots = container.getElementsByClassName("dot");
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+        dots[index].classList.add("active");
+    }
+});
+
+// News page
+document.addEventListener("DOMContentLoaded", () => {
+    const newsContainer = document.getElementById("news-container");
+
+    fetch('../json/news.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(news => {
+                const newsItem = `
+                    <div class="card-news">
+                        <div class="container-card-news-img">
+                            <img src="${news.url}" alt="${news.heading}">
+                        </div>
+                        <div class="container-card-news-text">
+                            <h3 class="text-news-heading">${news.heading}</h3>
+                            <p class="text-news-date"><i>${news.date}</i></p>
+                        </div>
+                    </div>
+                `;
+                newsContainer.innerHTML += newsItem;
+            });
+        })
+        .catch(error => console.error('Error fetching news:', error));
+});
+
+// Function to fetch events data from JSON file
+async function fetchEvents() {
+    try {
+        const response = await fetch('../json/events.json');
+        if (!response.ok) {
+            throw new Error('Failed to fetch events');
+        }
+        const events = await response.json();
+        return events;
+    } catch (error) {
+        console.error('Error fetching events:', error.message);
+        return []; // Return an empty array in case of error
+    }
+}
+
+// Function to fetch events data from JSON file
+async function fetchEvents() {
+    try {
+        const response = await fetch('../json/events.json');
+        if (!response.ok) {
+            throw new Error('Failed to fetch events');
+        }
+        const events = await response.json();
+        return events;
+    } catch (error) {
+        console.error('Error fetching events:', error.message);
+        return []; // Return an empty array in case of error
+    }
+}
+
+// Function to populate events based on type (future or past)
+async function populateEvents(type) {
+    const eventsList = document.getElementById("eventsList");
+    eventsList.innerHTML = "";
+
+    const today = new Date();
+    const events = await fetchEvents();
+
+    events.forEach(event => {
+        const eventDate = new Date(`${event.month} ${event.day}, 2024`);
+
+        if ((type === "future" && eventDate >= today) || (type === "past" && eventDate < today)) {
+            // Format the event date and time
+            const options = { month: 'short', day: 'numeric' };
+            const formattedDate = eventDate.toLocaleDateString('en-US', options);
+            const formattedTime = event.time;
+
+            // Create container for each event
+            const eventDiv = document.createElement("div");
+            eventDiv.className = "container-events";
+
+            // Create HTML using template literal
+            eventDiv.innerHTML = `
+                <div class="container-date">
+                    <div class="container-month">
+                        <h3>${event.month}</h3>
+                    </div>
+                    <p class="text-calender-day">${event.day}</p>
+                </div>
+
+                <div class="container-event-details">
+                    <h3>${event.eventName}</h3>
+                    <p class="p-smaller">${formattedTime}, ${formattedDate}</p>
+                    <p class="p-smaller">${event.location}</p>
+                </div>
+            `;
+
+            // Append event container to eventsList
+            eventsList.appendChild(eventDiv);
+        }
+    });
+
+    // Handle case where no events are present
+    if (eventsList.children.length === 0) {
+        const noEventsMessage = document.createElement("p");
+        noEventsMessage.textContent = "No events to show.";
+        eventsList.appendChild(noEventsMessage);
+    }
+
+    // Update button styles based on selection
+    const futureBtn = document.getElementById("button-future");
+    const pastBtn = document.getElementById("button-past");
+
+    if (type === "future") {
+        futureBtn.classList.add("selected");
+        pastBtn.classList.remove("selected");
+    } else if (type === "past") {
+        pastBtn.classList.add("selected");
+        futureBtn.classList.remove("selected");
+    }
+}
+
+// Function to show future events
+function showFutureEvents() {
+    populateEvents("future");
+}
+
+// Function to show past events
+function showPastEvents() {
+    populateEvents("past");
+}
+
+// Initially show past events
+showPastEvents();
